@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SkillSync</title>
+    <script type="module" src="./env.js"></script>
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <style>
+        .admin-container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .user-table th, .user-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .user-table th {
+            background: #003366;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        .user-table tr:hover {
+            background: #f8f9fa;
+        }
+        .action-btn {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .reset-btn {
+            background: #00A3E0;
+            color: white;
+        }
+        .reset-btn:hover {
+            background: #0082b3;
+        }
+        .status-msg {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+    </style>
+</head>
+<body style="background: #F0F4F8; color: #333;">
+    <div class="header" style="background: #003366;">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="SkillSync Logo">
+        </a>
+        <span class="welcome" style="color: white;">Admin Dashboard</span>
+        <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+    </div>
+
+    <div class="admin-container">
+        <h2>User Management</h2>
+        <p>Manage users and trigger password resets.</p>
+        
+        <div id="adminStatus" class="status-msg"></div>
+
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Skills</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <tr>
+                    <td colspan="4" style="text-align: center;">Loading users...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="module" src="./admin.js"></script>
+</body>
+</html>

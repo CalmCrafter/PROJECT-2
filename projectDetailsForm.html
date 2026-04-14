@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Project</title>
+  <script type = "module" src="./env.js"></script>
+  <link rel="stylesheet" href="styles/addproject.css">
+</head>
+<body>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="SkillSync Logo">
+</a>
+  <h1>Submit a New Project</h1>
+  <form id="project-form">
+    <label for="project-name">Project Name:</label>
+    <input type="text" id="project-name" name="project-name" placeholder="Enter project name" required>
+    <label for="project-description">Project Description:</label>
+    <textarea id="project-description" name="project-description" rows="4" placeholder="Briefly describe your project..." required></textarea>
+    <label for="project-skills">Skills (comma separated):</label>
+    <input type="text" id="project-skills" name="project-skills" placeholder="e.g., React, Node.js, AWS" required>
+    <div class="checkbox-container">
+      <input type="checkbox" id="active" name="active">
+      <label for="active">Active</label>
+    </div>
+    <button type="button" id="submit-project">Submit Project</button>
+  </form>
+  <script type = "module" src="projectDetailsForm.js" defer></script>
+</body>
+</html> 

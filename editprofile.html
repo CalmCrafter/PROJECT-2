@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile </title>
+    <script type = "module" src="./env.js"></script>
+    <link rel="stylesheet" href="styles/editprofile.css">    
+</head>
+<body>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="SkillSync Logo">
+    </a>
+    <div class="profile-container ">
+        <h2>Edit Profile</h2>
+        <label for="name">Name: </label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <label for="bio">Short Bio: </label>
+        <textarea id="bio" placeholder="Tell us about yourself..."></textarea>
+        <label for="experience">Experience level: </label>
+        <select id="experience">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Expert">Expert</option>
+        </select>
+        <label for="skills">Select Your Skills:</label>
+        <div class="skills-container">
+            <fieldset>
+                <legend>Frontend</legend>
+                <div class="skill-group">
+                    <input type="checkbox" value="React" id="react">
+                    <label for="react">React</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Vue" id="vue">
+                    <label for="vue">Vue</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Angular" id="angular">
+                    <label for="angular">Angular</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="HTML" id="html">
+                    <label for="html">HTML</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="CSS" id="css">
+                    <label for="css">CSS</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="JavaScript" id="javascript">
+                    <label for="javascript">JavaScript</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" class="other-skill-checkbox" id="other-frontend" data-target="other-skill-frontend">
+                    <label for="other-frontend">Other</label>
+                    <input type="text" id="other-skill-frontend" placeholder="Enter other skill" style="display: none;">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Backend</legend>
+                <div class="skill-group">
+                    <input type="checkbox" value="Node.js">
+                    <label>Node.js</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Django">
+                    <label>Django</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Flask">
+                    <label>Flask</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Spring Boot">
+                    <label>Spring Boot</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Express.js">
+                    <label>Express.js</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Ruby on Rails">
+                    <label>Ruby on Rails</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" class="other-skill-checkbox" data-target="other-skill-backend">
+                    <label>Other</label>
+                </div>
+                <input type="text" id="other-skill-backend" placeholder="Enter other skill" style="display: none;">
+            </fieldset>
+            <fieldset>
+                <legend>DevOps</legend>
+                <div class="skill-group">
+                    <input type="checkbox" value="Docker">
+                    <label>Docker</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Kubernetes">
+                    <label>Kubernetes</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="AWS">
+                    <label>AWS</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="CI/CD">
+                    <label>CI/CD</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" class="other-skill-checkbox" data-target="other-skill-devops">
+                    <label>Other</label>
+                </div>
+                <input type="text" id="other-skill-devops" placeholder="Enter other skill" style="display: none;">
+            </fieldset>
+            <fieldset>
+                <legend>Sports</legend>
+                <div class="skill-group">
+                    <input type="checkbox" value="Football" id="football">
+                    <label for="football">Football</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Cricket" id="cricket">
+                    <label for="cricket">Cricket</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Tennis" id="tennis">
+                    <label for="tennis">Tennis</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Running" id="running">
+                    <label for="running">Running</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" class="other-skill-checkbox" data-target="other-skill-sports">
+                    <label>Other</label>
+                </div>
+                <input type="text" id="other-skill-sports" placeholder="Enter other sport" style="display: none;">
+            </fieldset>
+            <fieldset>
+                <legend>Arts & Performance</legend>
+                <div class="skill-group">
+                    <input type="checkbox" value="Singing" id="singing">
+                    <label for="singing">Singing</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Dancing" id="dancing">
+                    <label for="dancing">Dancing</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Guitar" id="guitar">
+                    <label for="guitar">Guitar</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Painting" id="painting">
+                    <label for="painting">Painting</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" class="other-skill-checkbox" data-target="other-skill-arts">
+                    <label>Other</label>
+                </div>
+                <input type="text" id="other-skill-arts" placeholder="Enter other art" style="display: none;">
+            </fieldset>
+            <fieldset>
+                <legend>Other</legend>
+                <div class="skill-group">
+                    <input type="checkbox" value="UI/UX">
+                    <label>UI/UX</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="AI/ML">
+                    <label>AI/ML</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Cybersecurity">
+                    <label>Cybersecurity</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" value="Blockchain">
+                    <label>Blockchain</label>
+                </div>
+                <div class="skill-group">
+                    <input type="checkbox" class="other-skill-checkbox" data-target="other-skill-other">
+                    <label>Other</label>
+                </div>
+                <input type="text" id="other-skill-other" placeholder="Enter other skill" style="display: none;">
+            </fieldset>
+        </div>
+        <label for="github">GitHub ID:</label>
+        <input type="text" id="github" placeholder="Enter GitHub Username">
+        <button id = "saveProfileButton">Save Profile</button>
+    </div>
+    <script type = "module" src = "./profile.js"></script>
+</body>

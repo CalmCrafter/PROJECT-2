@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup or Login</title>
+    <script type="module" src="./env.js"></script>
+    <script type="module" src="./firebaseconfig.js"></script>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="SkillSync Logo">
+    </a>
+    <div class="container">
+        <div class="form-box">
+            <h2>Sign Up</h2>
+            <div id="signUpMessage" style="display: none; color: #ff8c8c; margin-bottom: 10px;"></div>
+            <div class="input-group">
+                <img src="https://cdn4.iconfinder.com/data/icons/e-commerce-icon-set/48/Username-64.png" alt="User Icon">
+                <input type="text" id="name-js" placeholder="Enter Name" required>
+            </div>
+            <div class="input-group">
+                <img src="https://cdn0.iconfinder.com/data/icons/essentials-4/1691/packet-64.png" alt="Email Icon">
+                <input type="email" id="email-js" placeholder="Enter Email" required>
+            </div>
+            <div class="input-group">
+                <img src="https://cdn0.iconfinder.com/data/icons/essentials-4/1710/lock-64.png" alt="Password Icon">
+                <input type="password" id="password-js" placeholder="Enter Password" required>
+            </div>
+            <button id="submitSignUp">Sign Up</button>
+        </div>
+        <div class="form-box">
+            <h2>Login</h2>
+            <div id="signInMessage" style="display: none; color: #ff8c8c; margin-bottom: 10px;"></div>
+            <div class="input-group">
+                <img src="https://cdn0.iconfinder.com/data/icons/essentials-4/1691/packet-64.png" alt="Email Icon">
+                <input type="email" id="semail-js" placeholder="Enter Email" required>
+            </div>
+            <div class="input-group">
+                <img src="https://cdn0.iconfinder.com/data/icons/essentials-4/1710/lock-64.png" alt="Password Icon">
+                <input type="password" id="spassword-js" placeholder="Enter Password" required>
+            </div>
+            <button id="submitSignIn">Login</button>
+            <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+            <button id="Google-signin">
+                <img src="https://cdn1.iconfinder.com/data/icons/logos-brands-in-colors/544/Google__G__Logo-64.png" class="google-icon">
+                Sign in using Google
+            </button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body 
+{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #F0F4F8;
+    color: #333;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #003366 0%, #001f3f 100%);
+    z-index: -1;
+}
+.logo 
+{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+.logo img 
+{
+    width: 180px;
+    height: auto;
+}
+.logo:hover
+{
+    transform: translateY(-5px);
+}
+.container 
+{
+    display: flex;
+    width: 85%;
+    max-width: 1000px;
+    justify-content: center;
+    gap: 40px; 
+    border-radius: 20px;
+    z-index: 2;
+}
+                                    /*Sign-up and Sign-in boxes*/
+.form-box 
+{
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); 
+}
+.form-box h2 
+{
+    margin-bottom: 25px;
+    color: #003366;
+    font-weight: 700;
+}
+                                            /*input-box*/
+.input-group 
+{
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+.input-group:focus-within 
+{
+    border-color: #00A3E0;
+    box-shadow: 0 0 8px rgba(0, 163, 224, 0.2);
+}
+
+.input-group img 
+{
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    opacity: 0.6;
+}
+
+.input-group input 
+{
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    background: transparent;
+    color: #333;
+    outline: none;
+}
+::placeholder 
+{
+    color: #999;
+}
+
+                                    /*Sign-up and sign-in button*/
+button 
+{
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+}
+button:hover 
+{
+    background: #00A3E0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 163, 224, 0.3);
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: #003366;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #00A3E0;
+    text-decoration: underline;
+}
+
+                                    /*Sign in with google button*/
+#Google-signin 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #555;
+    font-weight: 600;
+    padding: 12px;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+#Google-signin:hover 
+{
+    background: #f8f9fa;
+    border-color: #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.google-icon 
+{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+@media (max-width: 768px) 
+{
+    body {
+        height: auto;
+        padding: 80px 20px 40px;
+    }
+    .container 
+    {
+        flex-direction: column;
+        width: 100%;
+        gap: 30px; 
+    }
+    .form-box 
+    {
+        width: 100%;
+        padding: 30px 20px;
+    }
+}

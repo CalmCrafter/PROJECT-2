@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Users</title>
+    <script type="module" src="./matchlogic.js"></script>
+    <link rel="stylesheet" href="styles/search.css">
+</head>
+<body>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="SkillSync Logo">
+    </a>
+    <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+    <div class="container">
+     <div class="left-section">
+    <div class="search-container">
+        <h2>Find Users</h2>
+        <input type="text" id="skill-input" placeholder="Enter skill (e.g., Java, Python)">
+        <select id="experience-filter">
+            <option value="any">Any Experience</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Expert">Expert</option>
+        </select>
+        <button class="search-btn" onclick="searchUsers()">Find Users</button>
+    </div>
+        <div class="profile-card" id="user-profile">
+            <h2 id="profile-name">Name</h2>
+            <p><strong>Experience:</strong> <span id="profile-exp">Loading...</span></p>
+            <p><strong>GitHub:</strong> <a id="profile-github" href="#" target="_blank" style="color: #00c2ff;">GitHub Link</a></p>
+            <p><strong>Skills:</strong></p>
+            <div class="skills" id="profile-skills"></div>
+            <div class="buttons">
+                <button class="nav-btn" onclick="prevUser()">⬅ Prev</button>
+                <button class="chat-btn" onclick="showChat()">💬 Chat</button>
+                <button class="nav-btn" onclick="nextUser()">Next ➡</button>
+            </div>
+        </div>
+    </div>
+        <div class="chat-container" id="chat-container">
+            <button class="close-chat-btn" onclick="toggleChat()">✖</button>
+            <h2>Chat with <span id="chat-user-name"></span></h2>
+            <div id="chat-box" class="chat-box"></div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button class="send-btn" onclick="sendMessage()">
+                    <img src="https://cdn3.iconfinder.com/data/icons/system-basic-vol-5/20/icon-send-email-message-paper-plane-2-64.png" alt="Send" class="send-icon"> 
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+        <script type="module">
+    import { db } from "./env.js";
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
+
+    function showChat() {
+        document.getElementById("chat-container").style.display = "block";
+    }
+
+    function toggleChat() {
+        const chatContainer = document.getElementById("chat-container");
+        chatContainer.style.display =
+            chatContainer.style.display === "none" || chatContainer.style.display === ""
+                ? "block"
+                : "none";
+    }
+
+    async function fetchChatUserDetails() {
+        const chatUserId = localStorage.getItem("ChatWithUserId");
+        const projectId = localStorage.getItem("ChatProjectId");
+
+        if (chatUserId && projectId) {
+            try {
+                const userRef = doc(db, "users", chatUserId);
+                const userSnap = await getDoc(userRef);
+
+                if (userSnap.exists()) {
+                    document.getElementById("chat-user-name").textContent = userSnap.data().name;
+                } else {
+                    document.getElementById("chat-user-name").textContent = "Unknown User";
+                }
+
+                showChat();
+                localStorage.removeItem("ChatWithUserId");
+                localStorage.removeItem("ChatProjectId");
+            } catch (error) {
+                console.error("Error loading chat user details:", error);
+            }
+        }
+    }
+
+    window.onload = fetchChatUserDetails;
+</script>
+</body>
+</html>

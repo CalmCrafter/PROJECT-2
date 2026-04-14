@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | SkillSync</title>
+
+    <!-- Scripts -->
+    <script type="module" src="./env.js"></script>
+    <script type="module" src="./firebaseconfig.js"></script>
+    <script type="module" src="./displayprofile.js"></script>
+    <script type="module" src="./dashboard.js"></script>
+    <script type="module" src="./collaboration.js"></script>
+
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="SkillSync Logo">
+        </a>
+        <span class="welcome">Welcome to SkillSync</span>
+        <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+    </div>
+    <div class="container">
+        <div class="profile-card">
+            <h2>My Profile</h2>
+            <p><strong>Name:</strong> <span id="name">Loading...</span></p>
+            <p><strong>GitHub:</strong> <a id="githublink" href="#" target="_blank" style="color: #00c2ff;">Loading...</a></p>
+            <p><strong>Bio:</strong> <span id="bio">Loading...</span></p>
+            <p><strong>Skills:</strong></p>
+            <div class="skills" id="skills-list"></div>
+            <p><strong>Projects:</strong></p>
+            <div id="projects-list"></div>
+            <div id="project-details">
+                <h2>Project Details</h2>
+                <p>Select a project to view details.</p>
+            </div>
+            <button class="glow-btn" onclick="window.location.href='editprofile.html'">
+                <img src="https://cdn0.iconfinder.com/data/icons/font-awesome-solid-vol-4/640/user-edit-64.png" class="button-icon"> Edit Profile
+            </button>
+            <button class="glow-btn" onclick="window.location.href='projectDetailsForm.html'">
+                <img src="https://cdn2.iconfinder.com/data/icons/arrows-and-universal-actions-icon-set/256/plus_circle-64.png" class="button-icon"> Add Project
+            </button>
+        </div>
+        <div class="requests-card">
+            <h2>Collaborate</h2>
+            <section id="collab-requests-section">
+            <h3>Incoming Collaboration Requests</h3>
+            <div id="request-container">Loading...</div>
+            </section>
+            <input type="text" id="skillsInput" placeholder="Enter skills (comma-separated)">
+            <button class="find-btn" onclick="findProjectsByInputSkills()">
+                <img src="https://cdn0.iconfinder.com/data/icons/digital-marketing-179/32/search-64.png" class="button-icon"> Find Projects by Skills</button>
+            <div id="matching-projects-list"></div>
+            <button class="find-btn" onclick="window.location.href='search.html'">
+                <img src="https://cdn3.iconfinder.com/data/icons/fluent-solid-24px-vol-5/24/ic_fluent_people_community_add_24_filled-64.png" class="button-icon"> Find Collaborators
+            </button>
+        </div>
+    </div>
+</body>
+</html>
